@@ -11,7 +11,7 @@ from django.views.generic import (
 posts	=	[
 	{
 		'title'			:	'Blog Post 1',
-		'author'			:	'Teejay',
+		'author'		:	'Teejay',
 		'content'		:	'First Blog Post',
 		'date_posted'	:	'December 24th, 2020',	
 	},
@@ -35,6 +35,7 @@ class PostListView(ListView):
 	template_name			=	'blog/index.html'  # <app>/<model>_<viewtype>.html
 	context_object_name		=	'posts'
 	ordering				=	['-date_posted']
+	paginate_by				=	2
 
 class PostDetailView(DetailView):
 	model					=	Post
